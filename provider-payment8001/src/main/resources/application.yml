@@ -20,4 +20,4 @@ eureka:
     fetch-registry: true
     service-url:
       # 这个地址是和eureka的服务地址一样的
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001:7001/eureka,http://eureka7002.com:7002/eureka

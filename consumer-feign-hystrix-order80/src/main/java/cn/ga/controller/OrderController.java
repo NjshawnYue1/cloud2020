@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @Slf4j
-@DefaultProperties(defaultFallback = "paymentTimeoutGlobalHandler")
+//@DefaultProperties(defaultFallback = "paymentTimeoutGlobalHandler")
 @RequestMapping("consumer/payment/hystrix")
 public class OrderController {
 
@@ -34,7 +34,7 @@ public class OrderController {
 //                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
 //            }
 //    )
-    @HystrixCommand
+//    @HystrixCommand
     @GetMapping("timeout")
     public String timeout(){
         return orderService.timeout();

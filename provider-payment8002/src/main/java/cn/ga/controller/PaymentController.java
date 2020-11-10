@@ -61,7 +61,7 @@ public class PaymentController {
     }
 
 
-    @GetMapping("list")
+    @GetMapping("get/list")
     public CommonResult<List> getPayments() {
         List<Payment> payments = paymentService.getAll();
         CommonResult<List> commonResult = new CommonResult<>();
@@ -72,7 +72,7 @@ public class PaymentController {
         return commonResult;
     }
 
-    @GetMapping("timeout")
+    @GetMapping("get/timeout")
     public String getTimeout(){
         try{
             TimeUnit.SECONDS.sleep(3);

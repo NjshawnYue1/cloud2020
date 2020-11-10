@@ -9,4 +9,6 @@ public interface PaymentService {
 
     public String paymentOk();
     public String paymentTimeout();
+
+    public String paymentCircuitBreakerOk(Integer id);
 }

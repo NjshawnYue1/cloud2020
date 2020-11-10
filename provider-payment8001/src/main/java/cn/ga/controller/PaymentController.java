@@ -52,7 +52,7 @@ public class PaymentController {
             commonResult.setCode(200);
             commonResult.setData(payment);
             commonResult.setMessage("查询成功");
-            log.info("查询到的记录是----{}"+ serverPort, payment);
+            log.info("查询到的记录是----{} ------"+ serverPort, payment);
         } else {
             commonResult.setCode(400);
             commonResult.setMessage("没有这条记录,查询的id为: " + id);
@@ -61,7 +61,7 @@ public class PaymentController {
     }
 
 
-    @GetMapping("list")
+    @GetMapping("get/list")
     public CommonResult<List> getPayments() {
         List<Payment> payments = paymentService.getAll();
         CommonResult<List> commonResult = new CommonResult<>();
@@ -72,7 +72,7 @@ public class PaymentController {
         return commonResult;
     }
 
-    @GetMapping("timeout")
+    @GetMapping("get/timeout")
     public String getTimeout(){
         try{
             TimeUnit.SECONDS.sleep(3);

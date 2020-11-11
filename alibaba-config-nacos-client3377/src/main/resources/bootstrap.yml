@@ -1,0 +1,17 @@
+# 此命名配置文件加载优先级最高
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+#        namespace: 在nacos新建时会给一个id 这里配置那个id即可
+#        group: 组别
+
+#${spring.application.name}-${spring.profile.active}-${spring.cloud.config.file-extension}:

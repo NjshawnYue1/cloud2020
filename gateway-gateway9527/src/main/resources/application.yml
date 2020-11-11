@@ -8,23 +8,25 @@ spring:
     gateway:
       discovery:
         locator:
-#          从服务中心动态创建路由
+          #          从服务中心动态创建路由
           enabled: true
       routes:
-#        路由名称 唯一
+        #        路由名称 唯一
         - id: payment_routh
-#           匹配后的地址
-#          uri: http://localhost:8001
-#           匹配服务名
+          #           匹配后的地址
+          #          uri: http://localhost:8001
+          #           匹配服务名
           uri: lb://PAYMENT-SERVICE
-#          断言地址
+          #          断言地址
           predicates:
             - Path=/payment/get/**
         - id: payment_routh2
-#          uri: http://localhost:8001
+          #          uri: http://localhost:8001
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payment/get/**
+            #            时区 时间 日期之类的配置还有before between等 还包括一些 请求头的配置 可以配正则表达式
+            - After=2020-11-11T13:00:09.481+08:00[Asia/Shanghai]
 
 eureka:
   instance:
